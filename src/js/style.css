@@ -1,0 +1,66 @@
+:root {
+  --background: #000000;
+  --foreground: #EEEEEE;
+  --code-background: #222222;
+  --code-foreground: #00FF00;
+}
+
+body {
+  margin: 0px;
+  font-family: sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type=range] {
+  appearance: none;
+  box-sizing: border-box;
+  width: 50dvw;
+  height: 30px;
+  background: var(--code-background);
+}
+
+input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb {
+  border: none;
+  border-radius: 2px;
+  height: 40px;
+  width: 30px;
+  background: var(--code-foreground);
+}
+
+code {
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  background: var(--code-background);
+  color: var(--code-foreground);
+  width: 50dvw;
+  box-sizing: border-box;
+}
+
+#result {
+  opacity: 0;
+  transition: all .2s;
+}
+
+#result::before {
+  content: "> ";
+}
+
+#result.visible {
+  opacity: 1;
+}

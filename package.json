@@ -4,8 +4,8 @@
   "description": "Hello, World for WASM with C",
   "main": "src/web/index.ts",
   "scripts": {
-    "start": "build && cd src/web && vite",
-    "build": "clang --target=wasm32 --no-standard-libraries -Wl,--export-all, -Wl,--no-entry -o out/hello.wasm src/c/hello.c"
+    "start": "npm run build && vite src/js",
+    "build": "clang-11 --target=wasm32 -ffreestanding -fno-builtin -O3 --no-standard-libraries -Wl,--export-all -Wl,--no-entry -Wl,--allow-undefined  -o out/hello.wasm src/c/hello.c"
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "license": "MIT",

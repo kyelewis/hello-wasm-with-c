@@ -1,12 +1,16 @@
 const importObject = {
   env: {
      getLevel() {
-       return document.getElementById('input').value;
+       return document.getElementById('level-input').value;
      }
   }
 };
 
 (async() => {
+
+  document.getElementById('level-input').addEventListener("change", (event) => {
+    event.target.setAttribute('data-level', event.target.value)
+  });
 
   // Load the WASM  
   const { instance } = await WebAssembly.instantiateStreaming(fetch('./hello.wasm'), importObject);
@@ -31,7 +35,7 @@ const render = (instance) => () => {
   );
 
   const renderedText = decodeUntilNull(buffer);
-  const el = document.getElementById('result');
+  const el = document.getElementById('result-text');
   el.classList.remove('visible');
   setTimeout(() => {
     el.innerText = renderedText;

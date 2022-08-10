@@ -1,14 +1,8 @@
 :root {
   --background: #000000;
   --foreground: #EEEEEE;
-  --code-background: #222222;
-  --code-foreground: #00FF00;
-  --slider-level-one: #00FF00;
-  --slider-level-two: #99FF00;
-  --slider-level-three: #FFFF00;
-  --slider-level-four: #FF9900;
-  --slider-level-five: #FF0000;
-  --corner-radius: 7px;
+  --terminal-background: #00BB40, #113311;
+  --corner-radius: 8px;
   --content-width: 90dvw;
 }
 
@@ -34,70 +28,18 @@ h1 {
   text-align: center;
 }
 
-input[type=range] {
-  appearance: none;
-  box-sizing: border-box;
-  background: var(--code-background);
-  border-radius: var(--corner-radius);
-}
-
-input[type=range]::-webkit-slider-thumb,
-input[type=range]::-moz-range-thumb {
-  border: none;
-  border-radius: var(--corner-radius);
-  height: 40px;
-  width: 30px;
-  transition: all .3s;
-}
-
-#level-input {
-  height: 30px;
-}
-
-#level-input[data-level="0"]::-webkit-slider-thumb,
-#level-input[data-level="0"]::-moz-range-thumb {
-  background: var(--slider-level-one);
-}
-
-#level-input[data-level="1"]::-webkit-slider-thumb,
-#level-input[data-level="1"]::-moz-range-thumb {
-  background: var(--slider-level-two);
-}
-
-#level-input[data-level="2"]::-webkit-slider-thumb,
-#level-input[data-level="2"]::-moz-range-thumb {
-  background: var(--slider-level-three);
-}
-
-#level-input[data-level="3"]::-webkit-slider-thumb,
-#level-input[data-level="3"]::-moz-range-thumb {
-  background: var(--slider-level-four);
-}
-
-#level-input[data-level="4"]::-webkit-slider-thumb,
-#level-input[data-level="4"]::-moz-range-thumb {
-  background: var(--slider-level-five);
-}
-  
-code {
+.terminal {
   display: block;
-  padding: 20px;
   box-sizing: border-box;
   white-space: pre;
   border-radius: var(--corner-radius);
-  background: var(--code-background);
-  color: var(--code-foreground);
+  background: url(scanlines.png) center, radial-gradient(circle, var(--terminal-background));
+  text-align: center;
 }
 
-#result-text {
-  opacity: 0;
-  transition: all .2s;
-}
-
-#result-text::before {
-  content: "> ";
-}
-
-#result-text.visible {
-  opacity: 1;
+canvas {
+  width: 470px;
+  height: 50px;
+  image-rendering: pixelated;
+  filter: invert(0)
 }

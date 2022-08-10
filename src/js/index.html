@@ -7,34 +7,17 @@
 </head>
 
 <body>
+
   <main>
     <h1>Hello, WASM with C</h1>
-    <code id="result-code-block"><span id="result-text">...</span></code>
-    <input id="level-input" type='range' min="0" max="4" value="0" step="1" data-level="0"/>
-  <code id="c-code-block">extern unsigned char __heap_base;
-extern int getLevel();
-
-char *out = (char *)&__heap_base;
-
-char hello[5][16] = {
-  "Ready To Rock\0",
-  "Warming Up\0",
-  "Toasty!\0",
-  "Roasting\0",
-  "oN fIrE!1!\0",
-};
-
-char* render() {
-  int level = getLevel();
-
-  for(int i = 0; i &lt; 16; i++) {
-    out[i] = hello[level][i];
-  };
-
-  return out;
-}</code>
+    <div class="terminal">
+      <canvas width="47" height="5" id="render"></canvas>
+    </div>
+    <input id="input" />
   </main>
+
   <script src="./index"></script>
+
 </body>
 
 </html>

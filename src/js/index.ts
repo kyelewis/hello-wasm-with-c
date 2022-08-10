@@ -1,58 +1,56 @@
 const importObject = {
-  env: {
-     getLevel() {
-       return document.getElementById('level-input').value;
-     }
-  }
+  env: {}
 };
 
 (async() => {
 
-  document.getElementById('level-input').addEventListener("change", (event) => {
-    event.target.setAttribute('data-level', event.target.value)
-  });
-
-  // Load the WASM  
   const { instance } = await WebAssembly.instantiateStreaming(fetch('./hello.wasm'), importObject);
 
-  // Render now
-  render(instance);
+  const canvasContext = document.getElementById('render').getContext('2d');
 
-  // Render every 2s after that
-  setInterval(render(instance), 2000);
+  render(instance, canvasContext)();
 
 })();
 
-const render = (instance) => () => {
+const render = (wasmInstance, canvasContext) => () => {
 
-  // WASM exports are at instance.exports.X
-  const address = instance.exports.render();
+  const opacity = 255;
 
-  const buffer = new Uint8Array(
-    instance.exports.memory.buffer,
-    address,
-    1024
+  {
+    const inputPtr = wasmInstance.exports.getInputPtr();
+    const text = document.getElementById('input').value.toLowerCase();
+
+    // Encode the text and add a null terminator
+    const textEncoded = new TextEncoder().encode(text + "\0");
+
+    // Create and update view
+    const view = new Uint8Array(
+      wasmInstance.exports.memory.buffer, 
+      inputPtr, 
+      16);
+
+    view.set(textEncoded);
+
+  }
+
+  // Request a render of the image
+  const ptr = wasmInstance.exports.render(opacity);
+  const width = wasmInstance.exports.getImageWidth();
+  const height = wasmInstance.exports.getImageHeight();
+
+  const view = new Uint8ClampedArray(
+    wasmInstance.exports.memory.buffer,
+    ptr,
+    width * height * 4
   );
 
-  const renderedText = decodeUntilNull(buffer);
-  const el = document.getElementById('result-text');
-  el.classList.remove('visible');
-  setTimeout(() => {
-    el.innerText = renderedText;
-    el.classList.add('visible')
-  }, 500);
+  // Create ImageData from the buffer
+  const image = new ImageData(view, width, height);
+  canvasContext.canvas.width = width;
+  canvasContext.canvas.height = height;
+  canvasContext.putImageData(image, 0, 0);
 
-};
-
-
-const decodeUntilNull = (input: string) => {
-
-  const chars = new TextDecoder().decode(input);
-  let result = '';
-  for(const char of chars) {
-    if(char === '\0') return result;
-    result += char;
-  }
+  window.requestAnimationFrame(render(wasmInstance, canvasContext));
 
 };
 

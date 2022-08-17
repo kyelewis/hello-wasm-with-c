@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build:c && npm run build:ts",
     "build:c": "scripts/build-c.sh",
-    "build:js": "node -r esbuild-register scripts/build-ts.ts",
+    "build:ts": "node -r esbuild-register scripts/build-ts.ts",
     "clang-format": "clang-format -style=google -i src/c/*",
     "prettier": "prettier --write .",
     "test": "npm run test:prettier",

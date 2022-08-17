@@ -8,7 +8,12 @@
     mkClangShell = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; };
     in with pkgs; {
       devShells.x86_64-linux.default = mkClangShell {
-        buildInputs = [ lld wabt nodejs-18_x nodePackages.pnpm ];
+        buildInputs = [ 
+          lld 
+          wabt 
+          nodejs-18_x 
+          nodePackages.pnpm
+        ];
       };
     };
 }

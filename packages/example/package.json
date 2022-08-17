@@ -1,6 +1,6 @@
 {
   "name": "@kyedoesdev/wasm-terminal-example",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A WASM demo that draws a terminal in C and renders it to a canvas",
   "main": "src/index.html",
   "scripts": {

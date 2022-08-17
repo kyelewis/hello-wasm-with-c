@@ -3,5 +3,6 @@
   "version": "0.1.0",
   "description": "A WASM demo that draws a terminal in C and renders it to a canvas",
   "author": "Kye Lewis <kye@kyedoesdev.com>",
-  "license": "UPL"
+  "license": "UPL",
+  "private": true
 }

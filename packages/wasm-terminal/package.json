@@ -11,7 +11,7 @@
     "prettier": "prettier --write .",
     "test": "npm run test:prettier",
     "test:prettier": "prettier --check .",
-    "release": "release-it"
+    "release": "release-it --no-git.tag"
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "license": "UPL",

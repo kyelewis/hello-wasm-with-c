@@ -15,7 +15,6 @@
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "license": "UPL",
-  "scripts": {
   "devDependencies": {
     "esbuild": "0.15.3",
     "esbuild-register": "3.3.3",

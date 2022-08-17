@@ -15,5 +15,5 @@ import { WASMTerminal } from "@kyedoesdev/wasm-terminal";
 ```
 
 ## Screenshots
-[!Screenshot of wasm-terminal](https://github.com/kyelewis/hello-wasm-with-c/blob/main/screenshots/screenshot-1.png?raw=true)
+![Screenshot of wasm-terminal](https://github.com/kyelewis/hello-wasm-with-c/blob/main/screenshots/screenshot-1.png?raw=true)
 

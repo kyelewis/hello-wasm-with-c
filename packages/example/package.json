@@ -1,0 +1,24 @@
+{
+  "name": "@kyedoesdev/wasm-terminal-example",
+  "version": "0.1.0",
+  "description": "A WASM demo that draws a terminal in C and renders it to a canvas",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "vite src",
+    "prettier": "prettier --write .",
+    "test": "npm run test:prettier",
+    "test:prettier": "prettier --check .",
+    "release": "release-it"
+  },
+  "author": "Kye Lewis <kye@kyedoesdev.com>",
+  "license": "UPL",
+  "devDependencies": {
+    "prettier": "2.7.1",
+    "release-it": "15.3.0",
+    "typescript": "4.7.4",
+    "vite": "3.0.0"
+  },
+  "dependencies": {
+    "@kyedoesdev/wasm-terminal": "workspace:0.1.0"
+  }
+}

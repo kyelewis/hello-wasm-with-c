@@ -1,0 +1,25 @@
+{
+  "name": "@kyedoesdev/wasm-terminal",
+  "version": "0.1.0",
+  "description": "A WASM package written in C that draws a virtual terminal",
+  "module": "dist/index.js",
+  "scripts": {
+    "build": "npm run build:c && npm run build:ts",
+    "build:c": "scripts/build-c.sh",
+    "build:js": "node -r esbuild-register scripts/build-ts.ts",
+    "clang-format": "clang-format -style=google -i src/c/*",
+    "prettier": "prettier --write .",
+    "test": "npm run test:prettier",
+    "test:prettier": "prettier --check .",
+    "release": "release-it"
+  },
+  "author": "Kye Lewis <kye@kyedoesdev.com>",
+  "license": "UPL",
+  "scripts": {
+  "devDependencies": {
+    "esbuild": "0.15.3",
+    "esbuild-register": "3.3.3",
+    "prettier": "2.7.1",
+    "release-it": "15.3.0"
+  }
+}

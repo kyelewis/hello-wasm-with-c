@@ -19,7 +19,7 @@
     "vite": "3.0.0"
   },
   "dependencies": {
-    "@kyedoesdev/wasm-terminal": "0.1.1"
+    "@kyedoesdev/wasm-terminal": "0.1.2"
   },
   "private": true
 }

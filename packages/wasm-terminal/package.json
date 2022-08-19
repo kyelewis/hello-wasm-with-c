@@ -2,7 +2,7 @@
   "name": "@kyedoesdev/wasm-terminal",
   "version": "0.1.2",
   "description": "A WASM package written in C that draws a virtual terminal",
-  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "dist/*.js",
     "dist/*.wasm",

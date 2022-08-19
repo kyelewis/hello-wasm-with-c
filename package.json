@@ -4,8 +4,14 @@
   "description": "A WASM demo that draws a terminal in C and renders it to a canvas",
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "scripts": {
-    "build:example": "pnpm build --filter '@kyedoesdev/wasm-terminal-example'"
+    "lint": "pnpm --recursive lint",
+    "build": "pnpm --recursive build",
+    "test": "pnpm --recursive test",
+    "prepare": "husky install"
   },
   "license": "UPL",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "husky": "8.0.1"
+  }
 }

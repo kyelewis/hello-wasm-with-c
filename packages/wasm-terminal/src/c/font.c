@@ -104,16 +104,15 @@ uint8 const character_unknown[CHARACTER_HEIGHT][CHARACTER_WIDTH] = {
 // clang-format on
 
 uint8 getASCIICharacterPixel(char code, int x, int y) {
-  if(code == 'a') return character_a[y][x];  
-  if(code == 'b') return character_b[y][x];  
-  if(code == 'c') return character_c[y][x];  
-  if(code == 'i') return character_i[y][x];  
-  if(code == 'm') return character_m[y][x];
-  if(code == 'n') return character_n[y][x];
-  if(code == 's') return character_s[y][x];  
-  if(code == 'w') return character_w[y][x];  
-  if(code == '!') return character_exclaim[y][x];  
-  if(code == ' ') return character_space[y][x];  
+  if (code == 'a') return character_a[y][x];
+  if (code == 'b') return character_b[y][x];
+  if (code == 'c') return character_c[y][x];
+  if (code == 'i') return character_i[y][x];
+  if (code == 'm') return character_m[y][x];
+  if (code == 'n') return character_n[y][x];
+  if (code == 's') return character_s[y][x];
+  if (code == 'w') return character_w[y][x];
+  if (code == '!') return character_exclaim[y][x];
+  if (code == ' ') return character_space[y][x];
   return character_unknown[y][x];
 }
-

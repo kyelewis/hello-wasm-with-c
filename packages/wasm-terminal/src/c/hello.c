@@ -6,11 +6,10 @@ uint8* image = &__heap_base + 16;
 char* inputText = (char*)&__heap_base;
 
 uint8* render() {
-
   clearCharacters(image);
 
-  for(int i=0; i < 16; i++) {
-    if(inputText[i] == '\0') break;
+  for (int i = 0; i < 16; i++) {
+    if (inputText[i] == '\0') break;
     writeCharacter(image, inputText[i], i);
   }
   /*writeCharacter(image, 'w', 0, opacity);

@@ -6,6 +6,7 @@
   "scripts": {
     "start": "vite src",
     "build": "vite build src --outDir=../dist",
+    "lint": "npm run prettier",
     "prettier": "prettier --write .",
     "test": "npm run test:prettier",
     "test:prettier": "prettier --check .",

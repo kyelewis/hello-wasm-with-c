@@ -5,7 +5,7 @@ typedef unsigned char uint8;
 
 #define RGBA 4
 
-#define COLUMNS 10 
+#define COLUMNS 10
 #define ROWS 1
 
 #define CHARACTER_WIDTH 7

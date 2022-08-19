@@ -12,10 +12,10 @@ void writeCharacter(uint8* buffer, char character, int position) {
       uint8 pixel = getASCIICharacterPixel(character, x, y);
 
       // Write the pixel
-      ptr[0] = pixel == 0 ? 0 : 255;      // Red
-      ptr[1] = pixel == 0 ? 0 : 255;      // Green
-      ptr[2] = pixel == 0 ? 0 : 255;      // Blue
-      ptr[3] = pixel == 0 ? 0 : 255;      // Alpha
+      ptr[0] = pixel == 0 ? 0 : 255;  // Red
+      ptr[1] = pixel == 0 ? 0 : 255;  // Green
+      ptr[2] = pixel == 0 ? 0 : 255;  // Blue
+      ptr[3] = pixel == 0 ? 0 : 255;  // Alpha
       ptr += RGBA;
     }
 

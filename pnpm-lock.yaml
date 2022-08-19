@@ -7,7 +7,7 @@ importers:
 
   packages/example:
     specifiers:
-      '@kyedoesdev/wasm-terminal': 0.1.1
+      '@kyedoesdev/wasm-terminal': 0.1.2
       prettier: 2.7.1
       release-it: 15.3.0
       typescript: 4.7.4

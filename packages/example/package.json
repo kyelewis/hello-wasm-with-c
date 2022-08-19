@@ -8,7 +8,8 @@
     "build": "vite build src --outDir=../dist",
     "prettier": "prettier --write .",
     "test": "npm run test:prettier",
-    "test:prettier": "prettier --check ."
+    "test:prettier": "prettier --check .",
+    "deploy": "flyctl deploy"
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "license": "UPL",

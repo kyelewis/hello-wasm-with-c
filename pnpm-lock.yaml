@@ -1,4 +1,4 @@
-lockfileVersion: 5.4
+lockfileVersion: 5.3
 
 importers:
 
@@ -7,7 +7,7 @@ importers:
 
   packages/example:
     specifiers:
-      '@kyedoesdev/wasm-terminal': workspace:0.1.0
+      '@kyedoesdev/wasm-terminal': 0.1.1
       prettier: 2.7.1
       release-it: 15.3.0
       typescript: 4.7.4

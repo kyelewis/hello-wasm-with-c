@@ -5,16 +5,13 @@
   "main": "src/index.html",
   "scripts": {
     "start": "vite src",
+    "build": "vite build src --outDir=../dist",
     "prettier": "prettier --write .",
     "test": "npm run test:prettier",
-    "test:prettier": "prettier --check .",
-    "release": "release-it --no-git.tag"
+    "test:prettier": "prettier --check ."
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
   "license": "UPL",
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "prettier": "2.7.1",
     "release-it": "15.3.0",
@@ -22,6 +19,7 @@
     "vite": "3.0.0"
   },
   "dependencies": {
-    "@kyedoesdev/wasm-terminal": "workspace:0.1.0"
-  }
+    "@kyedoesdev/wasm-terminal": "0.1.1"
+  },
+  "private": true
 }

@@ -26,4 +26,4 @@ import { WASMTerminal } from "@kyedoesdev/wasm-terminal";
 ![Screenshot of wasm-terminal](https://github.com/kyelewis/hello-wasm-with-c/blob/main/screenshots/screenshot-1.png?raw=true)
 
 ## Demo
-[wasm-terminal](https://wasm-termimal.kyedoesdev.com/)
+[wasm-terminal](https://wasm-terminal.kyedoesdev.com/)

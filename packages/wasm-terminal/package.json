@@ -15,8 +15,9 @@
     "lint": "npm run clang-format && npm run prettier",
     "clang-format": "clang-format -style=google -i src/c/*",
     "prettier": "prettier --write .",
-    "test": "npm run test:prettier",
+    "test": "npm run test:prettier && npm run test:ts",
     "test:prettier": "prettier --check .",
+    "test:ts": "vitest run",
     "release": "release-it --no-git.tag"
   },
   "author": "Kye Lewis <kye@kyedoesdev.com>",
@@ -27,7 +28,10 @@
   "devDependencies": {
     "esbuild": "0.15.3",
     "esbuild-register": "3.3.3",
+    "isomorphic-fetch": "^3.0.0",
     "prettier": "2.7.1",
-    "release-it": "15.3.0"
+    "release-it": "15.3.0",
+    "vite": "3.0.0",
+    "vitest": "0.22.1"
   }
 }

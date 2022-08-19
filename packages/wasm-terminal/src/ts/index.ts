@@ -1,13 +1,10 @@
-// esbuild wasm loading
-import load from "../../dist/hello.wasm";
+import wasm from "./wasm";
 
 export class WASMTerminal {
   private wasmExports;
 
   public async init() {
-    //const { instance } = await WebAssemly.instantiateStreaming(fetch('./hello.wasm'), {});
-    //this.wasmExports = instance.exports;
-    this.wasmExports = await load();
+    this.wasmExports = await wasm();
   }
 
   public setText(text: string) {

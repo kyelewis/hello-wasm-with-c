@@ -2,7 +2,12 @@
   "name": "@kyedoesdev/wasm-terminal",
   "version": "0.1.1",
   "description": "A WASM package written in C that draws a virtual terminal",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*.js",
+    "dist/*.wasm",
+    "README.md"
+  ],
   "scripts": {
     "build": "npm run build:c && npm run build:ts",
     "build:c": "scripts/build-c.sh",
